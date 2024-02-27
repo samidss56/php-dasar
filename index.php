@@ -18,28 +18,38 @@ if (count($_POST) > 0) {
         $_SESSION["number"] = $number;
         $_SESSION["address"] = $address;
     } else {
-        echo "Login Gagal";
+        echo "<h1>Login Gagal</h1>";
     }
 }
 
 if (isset($_SESSION["nama"], $_SESSION["email"], $_SESSION["number"], $_SESSION["address"])) {
-    echo "<b> Selamat Datang " . $_SESSION["nama"] . " dengan alamat email " . $_SESSION["email"] . " dan nomor telepon " . $_SESSION["number"] . " dan alamat " . $_SESSION["address"] . "</b>";
+    echo "<b> Selamat Datang " . $_SESSION["nama"]."!" . " Dengan Alamat email " . $_SESSION["email"] . ", Nomor telepon " . $_SESSION["number"] . ", dan Alamat " . $_SESSION["address"] . "</b>";
 } else {
     echo "Anda Belum Login";
 }
 
 ?>
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Dasar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
 <body>
-    <form action="" method="post">
-        <input type="text" name="username" placeholder="Masukkan Nama Anda">
-        <input type="text" name="email" placeholder="Masukkan Email Anda">
-        <input type="text" name="number" placeholder="Masukkan Nomor Telepon Anda">
-        <input type="text" name="address" placeholder="Masukkan Alamat Anda">
-        <button type="submit">Login</button>
-    </form>
+    <div class="form-wrapper">
+        <form action="" method="post">
+            <input type="text" name="username" placeholder="Masukkan Nama Anda">
+            <input type="text" name="email" placeholder="Masukkan Email Anda">
+            <input type="text" name="number" placeholder="Masukkan Nomor Telepon Anda">
+            <input type="text" name="address" placeholder="Masukkan Alamat Anda">
+            <button type="submit">Login</button>
+        </form>
+    </div>
 </body>
 
 </html>
